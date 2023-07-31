@@ -1,0 +1,62 @@
+todo=[]
+option=0
+while option!=5:
+    option=int(input('\n***** To-do List*****'
+'\n Here are the options:'
+ '\n1-Add a to-do'
+ '\n2-Remove a to-do'
+ '\n3-Update a to-do'
+ '\n4-View your to-do list'
+ '\n5-Exit the app'
+ '\nWhat option number do you pick?' 
+ '\n'))
+    if option==1:
+        adding=input('Enter the new task: ')
+        if todo.count(adding)!=0:
+            print('This task is already in your to-do list')
+        else:
+            todo.append(adding)
+            print("Done!")
+        continue
+    elif option==2:
+        if todo==[]:
+          print('There are no tasks in your to-do list')
+        else:
+          print('Here is your to-do list:')
+          for i in todo:
+              print(i)
+          gone=input('Enter task to be removed: ')
+          if todo.count(gone)==0:
+              print('This task is not present in your to-do list')
+          else:
+              todo.remove(gone)
+              print("Done!")
+        continue
+    elif option==3:
+        if todo==[]:
+            print('As your to-do list is empty, '
+                  'there are no tasks to be updated at this time.')
+        else:
+            print('Here is your to-do list:')
+            for i in todo:
+              print(i)
+            find=input('Enter task to be updated: ')
+            if todo.count(find)==0:
+                print('This task is not in your to-do list.\n'
+                    'If you wish to add it, choose option 1')
+            else:                             # "elif find in todo:" can also be used
+                upd=input('Enter update to be made: ')
+                todo.insert(todo.index(find),upd)
+                todo.remove(find)
+                print("Done!")
+            continue
+    elif option==4:
+            if todo==[]:
+                print("Your to-do list is empty")
+            else:
+                 for i in todo:
+                  print(i)
+                 continue
+    else:
+        exit(1)
+        

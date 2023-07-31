@@ -1,0 +1,70 @@
+todo=[]
+
+def user_input():
+    option=int(input('\n***** To-do List*****'
+    '\n Here are the options:'
+    '\n1-Add a to-do'
+    '\n2-Remove a to-do'
+    '\n3-Update a to-do'
+    '\n4-View your to-do list'
+    '\n5-Exit the app'
+    '\nWhat option number do you pick?' 
+    '\n'))
+    return option
+
+def done():
+    print('Done!')
+
+def err():
+    print('INVALID USER INPUT')
+    exit(1)
+
+def option_1():
+    new=input('What is the new task? ')
+    done()
+    todo.append(new)
+
+def option_2():
+    to_be_removed=input('Which task is to be removed? ')
+    done()
+    todo.remove(to_be_removed)
+
+def option_3():
+    find=input('Enter task to be updated: ')
+    updated=input('Enter update to be made: ')
+    done()
+    todo.insert(todo.index(find),updated)
+    todo.remove(find)
+
+def option_4():
+    if todo==[]:
+        print('There is nothing in your list')
+    else:
+     for i in todo:
+       print(i)
+
+def option_5():
+    exit(1)
+    
+def main_code():
+    option=0
+    while option!=5:
+        k=user_input()
+        if k==1:
+            option_1()
+            continue
+        elif k==2:
+            option_2()
+            continue
+        elif k==3:
+            option_3()
+            continue
+        elif k==4:
+            option_4()
+            continue
+        elif k==5:
+            option_5()
+        else:
+            err()
+
+yu=main_code()
